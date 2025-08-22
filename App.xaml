@@ -1,0 +1,84 @@
+<Application x:Class="KGC.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Golden Theme Resources -->
+        <SolidColorBrush x:Key="PrimaryGoldBrush" Color="#FFD700"/>
+        <SolidColorBrush x:Key="SecondaryGoldBrush" Color="#FFA500"/>
+        <SolidColorBrush x:Key="DarkGoldBrush" Color="#B8860B"/>
+        <SolidColorBrush x:Key="LightGoldBrush" Color="#FFFACD"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="#8B4513"/>
+        <SolidColorBrush x:Key="TextBrush" Color="#2F4F4F"/>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="#FFFEF7"/>
+        <SolidColorBrush x:Key="BorderBrush" Color="#DAA520"/>
+
+        <!-- Button Style -->
+        <Style x:Key="GoldenButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryGoldBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource DarkGoldBrush}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SecondaryGoldBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource DarkGoldBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- TextBox Style -->
+        <Style x:Key="GoldenTextBoxStyle" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- ComboBox Style -->
+        <Style x:Key="GoldenComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- Label Style -->
+        <Style x:Key="GoldenLabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <!-- GroupBox Style -->
+        <Style x:Key="GoldenGroupBoxStyle" TargetType="GroupBox">
+            <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </Application.Resources>
+</Application>
